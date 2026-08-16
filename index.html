@@ -4,81 +4,106 @@
     <title>College Student Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>College Student Management System</h1>
+    <h1>College Student Management System</h1>
 
-<nav>
-    <a href="#">Admission</a>
-    <a href="#">Courses</a>
-    <a href="#">Fees</a>
-    <a href="#">Student Login</a>
-    <a href="#">Admin Login</a>
-</nav>
+    <nav>
+        <a href="#">Admission</a>
+        <a href="#">Courses</a>
+        <a href="#">Fees</a>
+        <a href="#">Student Login</a>
+        <a href="#">Admin Login</a>
+    </nav>
 
+    <!-- Student Admission -->
     <section>
-    <h2>Student Admission</h2>
+        <h2>Student Admission</h2>
 
-    <form id="admissionForm">
-        <label>Student Name:</label>
-        <input type="text" placeholder="Enter student name">
+        <form id="admissionForm">
 
-        <label>Father's Name:</label>
-        <input type="text" placeholder="Enter father's name">
+            <label>Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter student name">
 
-        <label>Mobile Number:</label>
-        <input type="tel" placeholder="Enter mobile number">
+            <label>Father's Name:</label>
+            <input type="text" id="fatherName" placeholder="Enter father's name">
 
-        <label>Email:</label>
-        <input type="email" placeholder="Enter email">
+            <label>Mobile Number:</label>
+            <input type="tel" id="mobile" placeholder="Enter mobile number">
 
-        <label>Course:</label>
-        <select>
-            <option>Select Course</option>
-            <option>B.Tech</option>
-            <option>BCA</option>
-            <option>BBA</option>
-            <option>MCA</option>
-        </select>
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter email">
 
-     <label>Branch:</label>
-        <input type="text" placeholder="Enter branch">
+            <label>Course:</label>
+            <select id="course">
+                <option value="">Select Course</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="MCA">MCA</option>
+            </select>
 
-        <label>Admission Date:</label>
-        <input type="date">
+            <label>Branch:</label>
+            <input type="text" id="branch" placeholder="Enter branch">
 
-        <button type="submit">Submit Admission</button>
-    </form>
-</section>
+            <label>Admission Date:</label>
+            <input type="date" id="admissionDate">
 
+            <button type="submit">Submit Admission</button>
+
+        </form>
+    </section>
+
+    <!-- Fees Details -->
     <section>
-    <h2>Student Login</h2>
+        <h2>Fees Details</h2>
 
-    <form>
-        <label>Student ID:</label>
-        <input type="text" placeholder="Enter Student ID">
+        <div>
+            <p><strong>Total Course Fees:</strong> ₹2,25,000</p>
+            <p><strong>Paid Fees:</strong> ₹1,00,000</p>
+            <p><strong>Remaining Fees:</strong> ₹1,25,000</p>
+        </div>
 
-        <label>Password:</label>
-        <input type="password" placeholder="Enter password">
+        <h3>Semester-wise Fees</h3>
 
-        <button type="submit">Student Login</button>
-    </form>
-</section>
+        <p>Semester 1 — ₹56,250 — Paid</p>
+        <p>Semester 2 — ₹56,250 — Pending</p>
+        <p>Semester 3 — ₹56,250 — Pending</p>
+        <p>Semester 4 — ₹56,250 — Pending</p>
+    </section>
 
+    <!-- Student Login -->
     <section>
-    <h2>Admin Login</h2>
+        <h2>Student Login</h2>
 
-    <form>
-        <label>Admin Username:</label>
-        <input type="text" placeholder="Enter username">
+        <form>
+            <label>Student ID:</label>
+            <input type="text" placeholder="Enter Student ID">
 
-        <label>Password:</label>
-        <input type="password" placeholder="Enter password">
+            <label>Password:</label>
+            <input type="password" placeholder="Enter password">
 
-        <button type="submit">Admin Login</button>
-    </form>
-</section>
-    
+            <button type="submit">Student Login</button>
+        </form>
+    </section>
+
+    <!-- Admin Login -->
+    <section>
+        <h2>Admin Login</h2>
+
+        <form>
+            <label>Admin Username:</label>
+            <input type="text" placeholder="Enter username">
+
+            <label>Password:</label>
+            <input type="password" placeholder="Enter password">
+
+            <button type="submit">Admin Login</button>
+        </form>
+    </section>
+
     <script src="script.js"></script>
+
 </body>
 </html>
