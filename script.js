@@ -42,7 +42,7 @@ document.getElementById("adminLoginForm").addEventListener("submit", function(ev
     const username = document.getElementById("adminUsername").value.trim();
     const password = document.getElementById("adminPassword").value;
 
-    if (username === "admin" && password === "admin123") {
+    if (username === "admin01" && password === "12345") {
         alert("Admin Login Successful!");
         window.location.href = "admin.html";
     } else {
