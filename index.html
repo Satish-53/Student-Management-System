@@ -13,8 +13,8 @@
         <a href="#admission">Admission</a>
         <a href="#courses">Courses</a>
         <a href="#fees">Fees</a>
-        <a href="#student-login.html">Student Login</a>
-        <a href="#admin-login.html">Admin Login</a>
+        <a href="#student-login">Student Login</a>
+        <a href="#admin-login">Admin Login</a>
     </nav>
 
     <!-- Student Admission -->
@@ -86,21 +86,19 @@
     </section>
 
     <!-- Student Login -->
-    <section id="student">
+   <section id="student-login">
     <h2>Student Login</h2>
-        
-        <form>
-            <label>Student ID:</label>
-            <input type="text" placeholder="Enter Student ID">
 
-            <label>Password:</label>
-            <input type="password" placeholder="Enter password">
+    <form>
+        <label for="student-id">Student ID</label>
+        <input type="text" id="student-id" placeholder="Enter Student ID" required>
 
-            <button type="button" onclick="window.location.href='student.html'">
-    Student Login
-</button>
-        </form>
-    </section>
+        <label for="student-password">Password</label>
+        <input type="password" id="student-password" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</section>
 
     <!-- Admin Login -->
     <section id="admin">
