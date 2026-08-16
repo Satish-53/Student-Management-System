@@ -85,37 +85,59 @@
         <p>Semester 8 — ₹1,45000 — Pending</p>
     </section>
 
-    <!-- Student Login -->
-   <section id="student-login">
+   <!-- Student Login -->
+<section id="student-login">
     <h2>Student Login</h2>
 
-    <form>
-        <label for="student-id">Student ID</label>
-        <input type="text" id="student-id" placeholder="Enter Student ID" required>
+    <form id="studentLoginForm">
 
-        <label for="student-password">Password</label>
-        <input type="password" id="student-password" placeholder="Enter Password" required>
+        <label for="student-id">Student ID:</label>
+        <input
+            type="text"
+            id="student-id"
+            placeholder="Enter Student ID"
+            required
+        >
 
-        <button type="submit">Login</button>
+        <label for="student-password">Password:</label>
+        <input
+            type="password"
+            id="student-password"
+            placeholder="Enter Password"
+            required
+        >
+
+        <button type="submit">Student Login</button>
+
     </form>
 </section>
 
     <!-- Admin Login -->
-    <section id="admin">
+<section id="admin">
     <h2>Admin Login</h2>
 
-        <form>
-            <label>Admin Username:</label>
-            <input type="text" id="adminUsername" placeholder="Enter username">
+    <form id="adminLoginForm">
 
-            <label>Password:</label>
-            <input type="password" id="adminPassword" placeholder="Enter password">
+        <label for="adminUsername">Admin Username:</label>
+        <input
+            type="text"
+            id="adminUsername"
+            placeholder="Enter username"
+            required
+        >
 
-           <button type="button" onclick="window.location.href='admin.html'">
-    Admin Login
-</button>
-        </form>
-    </section>
+        <label for="adminPassword">Password:</label>
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter password"
+            required
+        >
+
+        <button type="submit">Admin Login</button>
+
+    </form>
+</section>
 
     <script src="script.js"></script>
 
