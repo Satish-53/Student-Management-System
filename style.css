@@ -53,3 +53,43 @@ button {
 button:hover {
     background: #2563eb;
 }
+
+nav {
+    background: #111827;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+section {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+section h2 {
+    background: #1e3a8a;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+section div {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+section p {
+    font-size: 16px;
+}
