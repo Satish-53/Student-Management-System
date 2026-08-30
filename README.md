@@ -122,7 +122,6 @@ The system displays:
 - Admin Dashboard
 
 ---
-
 ## 👨‍💻 Author
 
 **Satish Yadav**
