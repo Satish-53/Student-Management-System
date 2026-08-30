@@ -1,28 +1,47 @@
 # 🎓 Student Management System
 
-A Student Management System developed using C language with
-File Handling and CRUD operations.
+A simple and user-friendly **Student Management System** developed using
+**C Programming**.
+
+This project helps manage student records using **CRUD operations,
+file handling, searching, sorting, student statistics, attendance,
+marks and fee management**.
+
+---
 
 ## 🚀 Features
 
 - 🔐 Admin Login
 - ➕ Add Student
-- 👀 View Student
-- 🔍 Search Student
-- ✏️ Update Student
+- 👀 View All Students
+- 🔍 Search Student by Roll Number
+- 🔎 Search Student by Name
+- ✏️ Update Student Details
 - 🗑️ Delete Student
 - 📊 Student Statistics
+- 👤 Student Profile
+- 📈 Sort Students by Marks
+- 📝 Marks & Grade Management
+- ✅ Pass / Fail Result
+- 📅 Attendance Management
+- 💰 Fee Management
 - 💾 File Handling
 - 🔄 Auto Save
+- 🛡️ Input Validation
+
+---
 
 ## 🛠️ Technologies Used
 
-- C Language
+- C Programming
 - Structures
 - Arrays
 - Functions
 - File Handling
 - CRUD Operations
+- Bubble Sort
+
+---
 
 ## 📂 Project Structure
 
@@ -30,34 +49,10 @@ File Handling and CRUD operations.
 Student-Management-System/
 │
 ├── code.c
+├── students.dat
 ├── index.html
 ├── admin.html
 ├── student.html
 ├── style.css
 ├── script.js
 └── README.md
-
-## ⚙️ How to Run
-
-1. Open the project in VS Code.
-2. Open `code.c`.
-3. Compile and run the C program.
-4. Open `index.html` in a browser to view the web interface.
-
-## 🔮 Future Improvements
-
-- Student Result Management
-- Attendance Management
-- Fee Management
-- Student Login
-- Database Integration
-- MySQL Support
-- Advanced Dashboard
-
-## 👨‍💻 Developer
-
-**Satish Yadav**
-
----
-
-⭐ If you like this project, consider giving it a star!
