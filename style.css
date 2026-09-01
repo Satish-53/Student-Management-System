@@ -381,43 +381,31 @@ header p {
     animation: subtitleSlide 1.8s ease-out;
 }
 
-
-/* Header fade */
-
 @keyframes headerAppear {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
-
-
-/* Heading animation */
 
 @keyframes titleSlide {
     from {
         opacity: 0;
         transform: translateY(-50px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-
-/* Subtitle animation */
-
 @keyframes subtitleSlide {
     from {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
