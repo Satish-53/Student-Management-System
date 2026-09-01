@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header>
+
+    <h1>Student Dashboard</h1>
+
+    <p>Student Management System</p>
+
+</header>
+
+
+<section>
+
+    <h2>My Admission Details</h2>
+
+    <div id="studentDetails">
+
+        <p>Loading student details...</p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const students =
+    JSON.parse(
+        localStorage.getItem("students")
+    ) || [];
+
+
+const studentDetails =
+    document.getElementById(
+        "studentDetails"
+    );
+
+
+if (students.length > 0) {
+
+    const data =
+        students[students.length - 1];
+
+
+    studentDetails.innerHTML = `
+
+        <p>
+            <strong>Name:</strong>
+            ${data.name}
+        </p>
+
+        <p>
+            <strong>Course:</strong>
+            ${data.course}
+        </p>
+
+        <p>
+            <strong>Branch:</strong>
+            ${data.branch || "Not Available"}
+        </p>
+
+        <p>
+            <strong>Semester:</strong>
+            ${data.semester}
+        </p>
+
+        <p>
+            <strong>Roll Number:</strong>
+            ${data.roll}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            ${data.email}
+        </p>
+
+        <p>
+            <strong>Age:</strong>
+            ${data.age}
+        </p>
+
+        <p>
+            <strong>Attendance:</strong>
+            ${data.attendance}%
+        </p>
+
+        <p>
+            <strong>Marks:</strong>
+            ${data.marks}
+        </p>
+
+        <p>
+            <strong>Total Fee:</strong>
+            ₹${Number(data.totalFee).toFixed(2)}
+        </p>
+
+        <p>
+            <strong>Paid Fee:</strong>
+            ₹${Number(data.paidFee).toFixed(2)}
+        </p>
+
+        <p>
+            <strong>Due Fee:</strong>
+            ₹${
+                (
+                    Number(data.totalFee) -
+                    Number(data.paidFee)
+                ).toFixed(2)
+            }
+        </p>
+
+    `;
+
+}
+else {
+
+    studentDetails.innerHTML =
+        "<p>No student data found.</p>";
+
+}
+
+</script>
+
+</body>
+
+</html>

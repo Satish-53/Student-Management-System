@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header>
+
+    <h1>Admin Dashboard</h1>
+
+    <p>Student Management System</p>
+
+</header>
+
+
+<!-- =========================
+     STUDENT INFORMATION
+========================= -->
+
+<section>
+
+    <h2>Student Information</h2>
+
+    <div id="adminStudentDetails">
+
+        <p>No student data found.</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEES INFORMATION
+========================= -->
+
+<section>
+
+    <h2>Fees Information</h2>
+
+    <div id="adminFeesDetails">
+
+        <p>No fee data available.</p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+
+// =====================================================
+// GET STUDENTS
+// =====================================================
+
+const students =
+    JSON.parse(
+        localStorage.getItem("students")
+    ) || [];
+
+
+const studentDetails =
+    document.getElementById(
+        "adminStudentDetails"
+    );
+
+
+const feesDetails =
+    document.getElementById(
+        "adminFeesDetails"
+    );
+
+
+// =====================================================
+// GRADE
+// =====================================================
+
+function getGrade(marks) {
+
+    if (marks >= 90)
+        return "A";
+
+    else if (marks >= 80)
+        return "B";
+
+    else if (marks >= 70)
+        return "C";
+
+    else if (marks >= 60)
+        return "D";
+
+    else if (marks >= 50)
+        return "E";
+
+    else
+        return "F";
+}
+
+
+// =====================================================
+// DISPLAY
+// =====================================================
+
+if (students.length > 0) {
+
+    studentDetails.innerHTML = "";
+
+    let totalFee = 0;
+
+    let paidFee = 0;
+
+
+    students.forEach(function(student) {
+
+        const dueFee =
+            Number(student.totalFee) -
+            Number(student.paidFee);
+
+
+        const grade =
+            getGrade(
+                Number(student.marks)
+            );
+
+
+        const result =
+            Number(student.marks) >= 50
+                ? "PASS"
+                : "FAIL";
+
+
+        const feeStatus =
+            Number(student.paidFee) >=
+            Number(student.totalFee)
+                ? "PAID"
+                : "DUE";
+
+
+        totalFee +=
+            Number(student.totalFee);
+
+
+        paidFee +=
+            Number(student.paidFee);
+
+
+        studentDetails.innerHTML += `
+
+            <div class="student-card">
+
+                <h3>${student.name}</h3>
+
+                <p>
+                    <strong>Roll Number:</strong>
+                    ${student.roll}
+                </p>
+
+                <p>
+                    <strong>Course:</strong>
+                    ${student.course}
+                </p>
+
+                <p>
+                    <strong>Branch:</strong>
+                    ${student.branch || "Not Available"}
+                </p>
+
+                <p>
+                    <strong>Semester:</strong>
+                    ${student.semester}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    ${student.email}
+                </p>
+
+                <p>
+                    <strong>Age:</strong>
+                    ${student.age}
+                </p>
+
+                <p>
+                    <strong>Attendance:</strong>
+                    ${student.attendance}%
+                </p>
+
+                <p>
+                    <strong>Marks:</strong>
+                    ${student.marks}
+                </p>
+
+                <p>
+                    <strong>Grade:</strong>
+                    ${grade}
+                </p>
+
+                <p>
+                    <strong>Result:</strong>
+                    ${result}
+                </p>
+
+                <p>
+                    <strong>Total Fee:</strong>
+                    ₹${Number(student.totalFee).toFixed(2)}
+                </p>
+
+                <p>
+                    <strong>Paid Fee:</strong>
+                    ₹${Number(student.paidFee).toFixed(2)}
+                </p>
+
+                <p>
+                    <strong>Due Fee:</strong>
+                    ₹${dueFee.toFixed(2)}
+                </p>
+
+                <p>
+                    <strong>Fee Status:</strong>
+                    ${feeStatus}
+                </p>
+
+                <hr>
+
+            </div>
+
+        `;
+
+    });
+
+
+    // =================================================
+    // FEE SUMMARY
+    // =================================================
+
+    const pendingFee =
+        totalFee - paidFee;
+
+
+    feesDetails.innerHTML = `
+
+        <p>
+            <strong>Total Course Fees:</strong>
+            ₹${totalFee.toFixed(2)}
+        </p>
+
+        <p>
+            <strong>Paid Fees:</strong>
+            ₹${paidFee.toFixed(2)}
+        </p>
+
+        <p>
+            <strong>Remaining Fees:</strong>
+            ₹${pendingFee.toFixed(2)}
+        </p>
+
+    `;
+
+}
+else {
+
+    studentDetails.innerHTML =
+        "<p>No student data found.</p>";
+
+    feesDetails.innerHTML =
+        "<p>No fee data available.</p>";
+}
+
+</script>
+
+</body>
+
+</html>

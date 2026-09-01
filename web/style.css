@@ -1,0 +1,367 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    background: #1e3a8a;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+header h1 {
+
+    margin: 0 0 10px 0;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+
+    background: #111827;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-weight: bold;
+}
+
+nav a:hover {
+
+    color: #60a5fa;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section {
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    padding: 0 15px;
+}
+
+
+section h2 {
+
+    text-align: center;
+
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 6px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+form {
+
+    background: white;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.15);
+
+    box-sizing: border-box;
+}
+
+
+label {
+
+    font-weight: bold;
+
+    display: block;
+
+    margin-top: 10px;
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 6px;
+
+    margin-bottom: 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+}
+
+
+input:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: #1e3a8a;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #1e3a8a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+}
+
+
+button:hover {
+
+    background: #2563eb;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+#formMessage,
+#loginMessage {
+
+    text-align: center;
+
+    font-weight: bold;
+
+    margin: 15px;
+}
+
+
+/* =====================================================
+   DASHBOARD CARDS
+===================================================== */
+
+.dashboard-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.1);
+}
+
+
+.card h3 {
+
+    color: #1e3a8a;
+}
+
+
+.card p {
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   STUDENT CARD
+===================================================== */
+
+.student-card {
+
+    background: white;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.1);
+}
+
+
+.student-card h3 {
+
+    color: #1e3a8a;
+
+    margin-top: 0;
+}
+
+
+.student-card p {
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+.student-card hr {
+
+    margin-top: 20px;
+
+    border: 0;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.statistics-box {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,0.1);
+}
+
+
+.statistics-box p {
+
+    padding: 10px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    nav a {
+
+        display: block;
+
+        margin: 10px;
+    }
+
+
+    .dashboard-cards {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    form {
+
+        width: 95%;
+    }
+
+}

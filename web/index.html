@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Student Management System</h1>
+    <p>College Student Management System</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#admission">Add Student</a>
+    <a href="#students">Students</a>
+    <a href="#search">Search</a>
+    <a href="#statistics">Statistics</a>
+    <a href="#login">Admin Login</a>
+</nav>
+
+
+<main>
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<section id="dashboard">
+
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h3>Total Students</h3>
+            <p id="totalStudents">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Passed Students</h3>
+            <p id="passedStudents">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Failed Students</h3>
+            <p id="failedStudents">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending Fees</h3>
+            <p id="pendingFees">₹0.00</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADD STUDENT
+========================= -->
+
+<section id="admission">
+
+    <h2>Add Student</h2>
+
+    <form id="studentForm">
+
+        <label>Full Name:</label>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter full name"
+            required
+        >
+
+
+        <!-- COURSE -->
+
+        <label>Course:</label>
+
+        <select id="courseSelect" required>
+
+            <option value="">-- Select Course --</option>
+
+            <option value="B.Tech">B.Tech</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="M.Sc">M.Sc</option>
+            <option value="BBA">BBA</option>
+            <option value="MBA">MBA</option>
+
+            <option value="Other">Other</option>
+
+        </select>
+
+        <input
+            type="text"
+            id="otherCourse"
+            placeholder="Enter your course"
+            style="display:none;"
+        >
+
+
+        <!-- BRANCH -->
+
+        <label>Branch:</label>
+
+        <select id="branchSelect" required>
+
+            <option value="">-- Select Branch --</option>
+
+            <option value="CSE">Computer Science & Engineering</option>
+            <option value="IT">Information Technology</option>
+            <option value="ECE">Electronics & Communication Engineering</option>
+            <option value="EEE">Electrical & Electronics Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="CE">Civil Engineering</option>
+            <option value="AI & ML">Artificial Intelligence & Machine Learning</option>
+            <option value="DS">Data Science</option>
+
+            <option value="Other">Other</option>
+
+        </select>
+
+        <input
+            type="text"
+            id="otherBranch"
+            placeholder="Enter your branch"
+            style="display:none;"
+        >
+
+
+        <!-- SEMESTER -->
+
+        <label>Semester:</label>
+
+        <select id="semesterSelect" required>
+
+            <option value="">-- Select Semester --</option>
+
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+
+            <option value="Other">Other</option>
+
+        </select>
+
+        <input
+            type="text"
+            id="otherSemester"
+            placeholder="Enter your semester"
+            style="display:none;"
+        >
+
+
+        <!-- ROLL -->
+
+        <label>Roll Number:</label>
+
+        <input
+            type="number"
+            id="roll"
+            placeholder="Enter roll number"
+            required
+        >
+
+
+        <!-- EMAIL -->
+
+        <label>Email:</label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter email"
+            required
+        >
+
+
+        <!-- AGE -->
+
+        <label>Age:</label>
+
+        <input
+            type="number"
+            id="age"
+            min="1"
+            placeholder="Enter age"
+            required
+        >
+
+
+        <!-- ATTENDANCE -->
+
+        <label>Attendance (%):</label>
+
+        <input
+            type="number"
+            id="attendance"
+            min="0"
+            max="100"
+            step="0.01"
+            placeholder="Enter attendance"
+            required
+        >
+
+
+        <!-- MARKS -->
+
+        <label>Marks:</label>
+
+        <input
+            type="number"
+            id="marks"
+            min="0"
+            max="100"
+            step="0.01"
+            placeholder="Enter marks"
+            required
+        >
+
+
+        <!-- TOTAL FEE -->
+
+        <label>Total Fee:</label>
+
+        <input
+            type="number"
+            id="totalFee"
+            min="0"
+            step="0.01"
+            placeholder="Enter total fee"
+            required
+        >
+
+
+        <!-- PAID FEE -->
+
+        <label>Paid Fee:</label>
+
+        <input
+            type="number"
+            id="paidFee"
+            min="0"
+            step="0.01"
+            placeholder="Enter paid fee"
+            required
+        >
+
+
+        <button type="submit">
+            Add Student
+        </button>
+
+    </form>
+
+    <p id="formMessage"></p>
+
+</section>
+
+
+<!-- =========================
+     STUDENT RECORDS
+========================= -->
+
+<section id="students">
+
+    <h2>Student Records</h2>
+
+    <button
+        type="button"
+        onclick="sortStudents()"
+    >
+        Sort Students by Marks
+    </button>
+
+    <div id="studentList">
+
+        <p>No student records available.</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section id="search">
+
+    <h2>Search Student</h2>
+
+    <form id="searchForm">
+
+        <label>Roll Number or Student Name:</label>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter roll number or name"
+            required
+        >
+
+        <button type="submit">
+            Search Student
+        </button>
+
+    </form>
+
+    <div id="searchResult">
+
+        <p>Enter student details to search.</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROFILE
+========================= -->
+
+<section id="profile">
+
+    <h2>Student Profile</h2>
+
+    <div id="studentProfile">
+
+        <p>Search a student to view profile.</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATISTICS
+========================= -->
+
+<section id="statistics">
+
+    <h2>Student Statistics</h2>
+
+    <div class="statistics-box">
+
+        <p>
+            <strong>Total Students:</strong>
+            <span id="statTotal">0</span>
+        </p>
+
+        <p>
+            <strong>Average Marks:</strong>
+            <span id="averageMarks">0</span>
+        </p>
+
+        <p>
+            <strong>Highest Marks:</strong>
+            <span id="highestMarks">0</span>
+        </p>
+
+        <p>
+            <strong>Lowest Marks:</strong>
+            <span id="lowestMarks">0</span>
+        </p>
+
+        <p>
+            <strong>Passed Students:</strong>
+            <span id="statPassed">0</span>
+        </p>
+
+        <p>
+            <strong>Failed Students:</strong>
+            <span id="statFailed">0</span>
+        </p>
+
+        <p>
+            <strong>Total Fee:</strong>
+            ₹<span id="statTotalFee">0</span>
+        </p>
+
+        <p>
+            <strong>Paid Fee:</strong>
+            ₹<span id="statPaidFee">0</span>
+        </p>
+
+        <p>
+            <strong>Pending Fee:</strong>
+            ₹<span id="statPendingFee">0</span>
+        </p>
+
+        <p>
+            <strong>Low Attendance:</strong>
+            <span id="lowAttendance">0</span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADMIN LOGIN
+========================= -->
+
+<section id="login">
+
+    <h2>Admin Login</h2>
+
+    <form id="adminLoginForm">
+
+        <label>Username:</label>
+
+        <input
+            type="text"
+            id="adminUsername"
+            placeholder="Enter username"
+            required
+        >
+
+        <label>Password:</label>
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter password"
+            required
+        >
+
+        <button type="submit">
+            Admin Login
+        </button>
+
+    </form>
+
+    <p id="loginMessage"></p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>© 2026 Student Management System</p>
+
+    <p>Developed using C, HTML, CSS and JavaScript</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
