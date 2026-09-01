@@ -365,3 +365,61 @@ footer {
     }
 
 }
+/* =========================
+   HEADER ANIMATION
+========================= */
+
+header {
+    animation: headerAppear 1.2s ease-out;
+}
+
+header h1 {
+    animation: titleSlide 1.5s ease-out;
+}
+
+header p {
+    animation: subtitleSlide 1.8s ease-out;
+}
+
+
+/* Header fade */
+
+@keyframes headerAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Heading animation */
+
+@keyframes titleSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Subtitle animation */
+
+@keyframes subtitleSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
