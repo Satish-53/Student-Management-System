@@ -49,7 +49,7 @@ char getGrade(float marks) {
         return 'C';
     else if (marks >= 60)
         return 'D';
-    else if (marks >= 50)
+    else if (marks >= 33)
         return 'E';
     else
         return 'F';
