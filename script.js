@@ -413,7 +413,7 @@ function getGrade(marks) {
     if (marks >= 60)
         return "D";
 
-    if (marks >= 50)
+    if (marks >= 33)
         return "E";
 
     return "F";
