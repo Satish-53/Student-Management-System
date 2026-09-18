@@ -165,14 +165,24 @@ if (students.length > 0) {
 
         studentDetails.innerHTML += `
 
-            <div class="student-card">
+<div class="student-card">
 
-                <h3>${student.name}</h3>
+    <div class="student-header">
 
-                <p>
-                    <strong>Roll Number:</strong>
-                    ${student.roll}
-                </p>
+        <img
+            src="${student.photo || 'https://via.placeholder.com/100'}"
+            alt="${student.name}"
+            class="student-photo"
+        >
+
+        <h3>${student.name}</h3>
+
+    </div>
+
+    <p>
+        <strong>Roll Number:</strong>
+        ${student.roll}
+    </p>
 
                 <p>
                     <strong>Course:</strong>
